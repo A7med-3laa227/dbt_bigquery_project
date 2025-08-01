@@ -1,0 +1,1399 @@
+[0m00:40:07.977577 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a13d90e9c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a13d6291c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a13d593da0>]}
+
+
+============================== 00:40:07.982260 | ba8d580a-bc72-4662-82de-c74253ed5198 ==============================
+[0m00:40:07.982260 [info ] [MainThread]: Running with dbt=1.9.3
+[0m00:40:07.983043 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/elmansy/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/home/elmansy/Documents/dbt_GCP/sales_analytics/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m00:40:07.997572 [info ] [MainThread]: dbt version: 1.9.3
+[0m00:40:07.998261 [info ] [MainThread]: python version: 3.12.7
+[0m00:40:07.998851 [info ] [MainThread]: python path: /home/elmansy/Documents/dbt_GCP/dbt-env/bin/python3
+[0m00:40:07.999562 [info ] [MainThread]: os info: Linux-6.11.0-18-generic-x86_64-with-glibc2.40
+[0m00:40:09.141292 [info ] [MainThread]: Using profiles dir at /home/elmansy/.dbt
+[0m00:40:09.141911 [info ] [MainThread]: Using profiles.yml file at /home/elmansy/.dbt/profiles.yml
+[0m00:40:09.142405 [info ] [MainThread]: Using dbt_project.yml file at /home/elmansy/Documents/dbt_GCP/sales_analytics/dbt_project.yml
+[0m00:40:09.142880 [info ] [MainThread]: adapter type: bigquery
+[0m00:40:09.143356 [info ] [MainThread]: adapter version: 1.9.1
+[0m00:40:09.282811 [info ] [MainThread]: Configuration:
+[0m00:40:09.283431 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m00:40:09.283910 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m00:40:09.284386 [info ] [MainThread]: Required dependencies:
+[0m00:40:09.284878 [debug] [MainThread]: Executing "git --help"
+[0m00:40:09.291157 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m00:40:09.291887 [debug] [MainThread]: STDERR: "b''"
+[0m00:40:09.292483 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m00:40:09.293005 [info ] [MainThread]: Connection:
+[0m00:40:09.293550 [info ] [MainThread]:   method: oauth
+[0m00:40:09.294043 [info ] [MainThread]:   database: sales-analytics-453721
+[0m00:40:09.294633 [info ] [MainThread]:   execution_project: sales-analytics-453721
+[0m00:40:09.295136 [info ] [MainThread]:   schema: sales_dataset
+[0m00:40:09.295647 [info ] [MainThread]:   location: EU
+[0m00:40:09.296143 [info ] [MainThread]:   priority: interactive
+[0m00:40:09.296638 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m00:40:09.297140 [info ] [MainThread]:   impersonate_service_account: None
+[0m00:40:09.297622 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m00:40:09.298130 [info ] [MainThread]:   job_retries: 1
+[0m00:40:09.298614 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m00:40:09.299139 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m00:40:09.299657 [info ] [MainThread]:   timeout_seconds: 300
+[0m00:40:09.300291 [info ] [MainThread]:   client_id: None
+[0m00:40:09.301020 [info ] [MainThread]:   token_uri: None
+[0m00:40:09.301629 [info ] [MainThread]:   dataproc_region: None
+[0m00:40:09.302149 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m00:40:09.302666 [info ] [MainThread]:   gcs_bucket: None
+[0m00:40:09.303313 [info ] [MainThread]:   dataproc_batch: None
+[0m00:40:09.304424 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m00:40:09.437194 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m00:40:09.437831 [debug] [MainThread]: On debug: select 1 as id
+[0m00:40:09.438401 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:40:16.290720 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=sales-analytics-453721&j=bq:EU:2dbce32c-ba00-4091-9c2c-28fb296f6f32&page=queryresults
+[0m00:40:16.906430 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m00:40:16.907639 [info ] [MainThread]: [32mAll checks passed![0m
+[0m00:40:16.912952 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 9.0525675, "process_in_blocks": "199456", "process_kernel_time": 0.351892, "process_mem_max_rss": "203080", "process_out_blocks": "24", "process_user_time": 3.559909}
+[0m00:40:16.914286 [debug] [MainThread]: Command `dbt debug` succeeded at 00:40:16.914038 after 9.05 seconds
+[0m00:40:16.915012 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m00:40:16.915969 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a13d90e9c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a11d765e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a11d4b6510>]}
+[0m00:40:16.917892 [debug] [MainThread]: Flushing usage events
+[0m00:40:17.826805 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:01:34.024896 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79e6413b7fb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79e641acf290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79e641ace390>]}
+
+
+============================== 01:01:34.030538 | 00e70596-cfc3-4391-9ca2-722f772523b5 ==============================
+[0m01:01:34.030538 [info ] [MainThread]: Running with dbt=1.9.3
+[0m01:01:34.032131 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/home/elmansy/.dbt', 'log_path': '/home/elmansy/Documents/dbt_GCP/sales_analytics/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt compile', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m01:01:36.109052 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '00e70596-cfc3-4391-9ca2-722f772523b5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79e6287d5520>]}
+[0m01:01:36.244258 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '00e70596-cfc3-4391-9ca2-722f772523b5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79e6214a9b20>]}
+[0m01:01:36.245573 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m01:01:36.508710 [debug] [MainThread]: checksum: 5671c00892cdbcef29c3b00cc5ba7510c3d18a35c883caeb9ab9ee266dc29c8f, vars: {}, profile: , target: , version: 1.9.3
+[0m01:01:36.510499 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m01:01:36.511487 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '00e70596-cfc3-4391-9ca2-722f772523b5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79e621039280>]}
+[0m01:01:39.120195 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'my_first_dbt_model' in the 'models' section of file 'models/example/schema.yml'
+[0m01:01:39.123667 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'my_second_dbt_model' in the 'models' section of file 'models/example/schema.yml'
+[0m01:01:39.443095 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.sales_analytics.sales_final' (models/marts/sales_final.sql) depends on a node named 'stg_sales' which was not found
+[0m01:01:39.445135 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": false, "command_wall_clock_time": 5.5819874, "process_in_blocks": "17232", "process_kernel_time": 0.475021, "process_mem_max_rss": "206212", "process_out_blocks": "24", "process_user_time": 7.952146}
+[0m01:01:39.446393 [debug] [MainThread]: Command `dbt compile` failed at 01:01:39.446097 after 5.58 seconds
+[0m01:01:39.447378 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79e641af13d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79e620aa45c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79e620acc050>]}
+[0m01:01:39.448353 [debug] [MainThread]: Flushing usage events
+[0m01:01:40.460755 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:02:23.058601 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x782be8ac1070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x782be8a9a3c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x782be8f526f0>]}
+
+
+============================== 01:02:23.063119 | ba91bb7b-fca8-4d37-8b73-4a446a196cee ==============================
+[0m01:02:23.063119 [info ] [MainThread]: Running with dbt=1.9.3
+[0m01:02:23.064052 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/elmansy/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/home/elmansy/Documents/dbt_GCP/sales_analytics/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt compile', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m01:02:24.932563 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ba91bb7b-fca8-4d37-8b73-4a446a196cee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x782be9033a40>]}
+[0m01:02:25.125882 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ba91bb7b-fca8-4d37-8b73-4a446a196cee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x782bc826d1c0>]}
+[0m01:02:25.127597 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m01:02:25.332461 [debug] [MainThread]: checksum: 5671c00892cdbcef29c3b00cc5ba7510c3d18a35c883caeb9ab9ee266dc29c8f, vars: {}, profile: , target: , version: 1.9.3
+[0m01:02:25.333584 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m01:02:25.334798 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'ba91bb7b-fca8-4d37-8b73-4a446a196cee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x782be7b64740>]}
+[0m01:02:27.393713 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'my_first_dbt_model' in the 'models' section of file 'models/example/schema.yml'
+[0m01:02:27.396042 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'my_second_dbt_model' in the 'models' section of file 'models/example/schema.yml'
+[0m01:02:27.633373 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.sales_analytics.unique_my_first_dbt_model_id.16e066b321' (models/example/schema.yml) depends on a node named 'my_first_dbt_model' in package '' which was not found
+[0m01:02:27.634538 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.sales_analytics.not_null_my_first_dbt_model_id.5fb22c2710' (models/example/schema.yml) depends on a node named 'my_first_dbt_model' in package '' which was not found
+[0m01:02:27.635412 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.sales_analytics.unique_my_second_dbt_model_id.57a0f8c493' (models/example/schema.yml) depends on a node named 'my_second_dbt_model' in package '' which was not found
+[0m01:02:27.636265 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.sales_analytics.not_null_my_second_dbt_model_id.151b76d778' (models/example/schema.yml) depends on a node named 'my_second_dbt_model' in package '' which was not found
+[0m01:02:27.748664 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.sales_analytics.example
+[0m01:02:27.756732 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ba91bb7b-fca8-4d37-8b73-4a446a196cee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x782bc2eef620>]}
+[0m01:02:27.881128 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m01:02:27.884935 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m01:02:27.905445 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ba91bb7b-fca8-4d37-8b73-4a446a196cee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x782bc1e9ab70>]}
+[0m01:02:27.906239 [info ] [MainThread]: Found 2 models, 492 macros
+[0m01:02:27.906946 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ba91bb7b-fca8-4d37-8b73-4a446a196cee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x782bc1f97b00>]}
+[0m01:02:27.910103 [info ] [MainThread]: 
+[0m01:02:27.910868 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m01:02:27.911593 [info ] [MainThread]: 
+[0m01:02:27.912708 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m01:02:27.920973 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_sales-analytics-453721_sales_dataset'
+[0m01:02:27.921703 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:02:31.288487 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ba91bb7b-fca8-4d37-8b73-4a446a196cee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x782be8ef0a40>]}
+[0m01:02:31.289220 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m01:02:31.297268 [debug] [Thread-1 (]: Began running node model.sales_analytics.stg_sales
+[0m01:02:31.298679 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_sales-analytics-453721_sales_dataset, now model.sales_analytics.stg_sales)
+[0m01:02:31.299519 [debug] [Thread-1 (]: Began compiling node model.sales_analytics.stg_sales
+[0m01:02:31.315804 [debug] [Thread-1 (]: Writing injected SQL for node "model.sales_analytics.stg_sales"
+[0m01:02:31.317313 [debug] [Thread-1 (]: Began executing node model.sales_analytics.stg_sales
+[0m01:02:31.318151 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m01:02:31.320402 [debug] [Thread-1 (]: Finished running node model.sales_analytics.stg_sales
+[0m01:02:31.322566 [debug] [Thread-3 (]: Began running node model.sales_analytics.sales_final
+[0m01:02:31.324204 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.sales_analytics.sales_final'
+[0m01:02:31.325392 [debug] [Thread-3 (]: Began compiling node model.sales_analytics.sales_final
+[0m01:02:31.332002 [debug] [Thread-3 (]: Writing injected SQL for node "model.sales_analytics.sales_final"
+[0m01:02:31.333425 [debug] [Thread-3 (]: Began executing node model.sales_analytics.sales_final
+[0m01:02:31.334453 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m01:02:31.336613 [debug] [Thread-3 (]: Finished running node model.sales_analytics.sales_final
+[0m01:02:31.338699 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m01:02:31.339775 [debug] [MainThread]: Connection 'model.sales_analytics.stg_sales' was properly closed.
+[0m01:02:31.340659 [debug] [MainThread]: Connection 'model.sales_analytics.sales_final' was properly closed.
+[0m01:02:31.343014 [debug] [MainThread]: Command end result
+[0m01:02:31.387393 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m01:02:31.391099 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m01:02:31.405294 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/run_results.json
+[0m01:02:31.407153 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 8.513651, "process_in_blocks": "304", "process_kernel_time": 0.425959, "process_mem_max_rss": "210820", "process_out_blocks": "3032", "process_user_time": 7.600435}
+[0m01:02:31.408242 [debug] [MainThread]: Command `dbt compile` succeeded at 01:02:31.407928 after 8.52 seconds
+[0m01:02:31.409566 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x782be7e88c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x782beb30b950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x782bc1f17680>]}
+[0m01:02:31.410479 [debug] [MainThread]: Flushing usage events
+[0m01:02:32.207877 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:03:17.128137 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708220ce0fe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708220f6f500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708220ce2c30>]}
+
+
+============================== 01:03:17.134014 | fb77f537-bb20-42ef-99d0-990545581f36 ==============================
+[0m01:03:17.134014 [info ] [MainThread]: Running with dbt=1.9.3
+[0m01:03:17.135025 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/home/elmansy/Documents/dbt_GCP/sales_analytics/logs', 'debug': 'False', 'profiles_dir': '/home/elmansy/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m01:03:18.561237 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fb77f537-bb20-42ef-99d0-990545581f36', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708200bc39b0>]}
+[0m01:03:18.687489 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fb77f537-bb20-42ef-99d0-990545581f36', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708200955700>]}
+[0m01:03:18.688601 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m01:03:18.883152 [debug] [MainThread]: checksum: 5671c00892cdbcef29c3b00cc5ba7510c3d18a35c883caeb9ab9ee266dc29c8f, vars: {}, profile: , target: , version: 1.9.3
+[0m01:03:19.066602 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m01:03:19.067352 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m01:03:19.076632 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.sales_analytics.example
+[0m01:03:19.138577 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fb77f537-bb20-42ef-99d0-990545581f36', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7082005a6540>]}
+[0m01:03:19.265737 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m01:03:19.270085 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m01:03:19.299368 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fb77f537-bb20-42ef-99d0-990545581f36', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708200392300>]}
+[0m01:03:19.300752 [info ] [MainThread]: Found 2 models, 492 macros
+[0m01:03:19.301809 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fb77f537-bb20-42ef-99d0-990545581f36', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7082006e71d0>]}
+[0m01:03:19.305961 [info ] [MainThread]: 
+[0m01:03:19.307203 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m01:03:19.308180 [info ] [MainThread]: 
+[0m01:03:19.309462 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m01:03:19.319814 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_sales-analytics-453721'
+[0m01:03:19.320729 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:03:21.464815 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_sales-analytics-453721, now list_sales-analytics-453721_sales_dataset)
+[0m01:03:21.465843 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m01:03:21.981784 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fb77f537-bb20-42ef-99d0-990545581f36', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708222234890>]}
+[0m01:03:21.986250 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m01:03:22.038489 [debug] [Thread-1 (]: Began running node model.sales_analytics.stg_sales
+[0m01:03:22.043154 [info ] [Thread-1 (]: 1 of 2 START sql view model sales_dataset.stg_sales ............................ [RUN]
+[0m01:03:22.048402 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_sales-analytics-453721_sales_dataset, now model.sales_analytics.stg_sales)
+[0m01:03:22.049610 [debug] [Thread-1 (]: Began compiling node model.sales_analytics.stg_sales
+[0m01:03:22.095647 [debug] [Thread-1 (]: Writing injected SQL for node "model.sales_analytics.stg_sales"
+[0m01:03:22.101141 [debug] [Thread-1 (]: Began executing node model.sales_analytics.stg_sales
+[0m01:03:22.195059 [debug] [Thread-1 (]: Writing runtime sql for node "model.sales_analytics.stg_sales"
+[0m01:03:22.196843 [debug] [Thread-1 (]: On model.sales_analytics.stg_sales: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "sales_analytics", "target_name": "dev", "node_id": "model.sales_analytics.stg_sales"} */
+
+
+  create or replace view `sales-analytics-453721`.`sales_dataset`.`stg_sales`
+  OPTIONS()
+  as 
+
+SELECT
+    order_id,
+    product_name,
+    amount,
+    country,
+    order_date,
+    
+    CASE 
+        WHEN DATE(order_date) >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 MONTH) THEN 'recent'
+        ELSE 'historical'
+    END AS partition_group
+  -- Dynamic partitioning
+FROM sales-analytics-453721.sales_dataset.raw_sales;
+
+
+[0m01:03:22.198783 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m01:03:22.694523 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=sales-analytics-453721&j=bq:EU:99fc1897-364c-4b7d-8c9f-7b1f075b67e7&page=queryresults
+[0m01:03:22.696781 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=sales-analytics-453721&j=bq:EU:99fc1897-364c-4b7d-8c9f-7b1f075b67e7&page=queryresults
+[0m01:03:22.719350 [debug] [Thread-1 (]: Database Error in model stg_sales (models/staging/stg_sales.sql)
+  Not found: Dataset sales-analytics-453721:sales_dataset was not found in location EU
+  compiled code at target/run/sales_analytics/models/staging/stg_sales.sql
+[0m01:03:22.726319 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fb77f537-bb20-42ef-99d0-990545581f36', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708220fbfb90>]}
+[0m01:03:22.729564 [error] [Thread-1 (]: 1 of 2 ERROR creating sql view model sales_dataset.stg_sales ................... [[31mERROR[0m in 0.67s]
+[0m01:03:22.732342 [debug] [Thread-1 (]: Finished running node model.sales_analytics.stg_sales
+[0m01:03:22.738245 [debug] [Thread-7 (]: Marking all children of 'model.sales_analytics.stg_sales' to be skipped because of status 'error'.  Reason: Database Error in model stg_sales (models/staging/stg_sales.sql)
+  Not found: Dataset sales-analytics-453721:sales_dataset was not found in location EU
+  compiled code at target/run/sales_analytics/models/staging/stg_sales.sql.
+[0m01:03:22.744472 [debug] [Thread-3 (]: Began running node model.sales_analytics.sales_final
+[0m01:03:22.745685 [info ] [Thread-3 (]: 2 of 2 SKIP relation sales_dataset.sales_final ................................. [[33mSKIP[0m]
+[0m01:03:22.750789 [debug] [Thread-3 (]: Finished running node model.sales_analytics.sales_final
+[0m01:03:22.757946 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m01:03:22.761780 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m01:03:22.763798 [debug] [MainThread]: Connection 'model.sales_analytics.stg_sales' was properly closed.
+[0m01:03:22.766432 [info ] [MainThread]: 
+[0m01:03:22.767716 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 3.46 seconds (3.46s).
+[0m01:03:22.771293 [debug] [MainThread]: Command end result
+[0m01:03:22.851914 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m01:03:22.857893 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m01:03:22.873867 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/run_results.json
+[0m01:03:22.874924 [info ] [MainThread]: 
+[0m01:03:22.877303 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m01:03:22.878433 [info ] [MainThread]: 
+[0m01:03:22.879746 [error] [MainThread]:   Database Error in model stg_sales (models/staging/stg_sales.sql)
+  Not found: Dataset sales-analytics-453721:sales_dataset was not found in location EU
+  compiled code at target/run/sales_analytics/models/staging/stg_sales.sql
+[0m01:03:22.883591 [info ] [MainThread]: 
+[0m01:03:22.885511 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=1 TOTAL=2
+[0m01:03:22.889460 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 5.9733496, "process_in_blocks": "776", "process_kernel_time": 0.429603, "process_mem_max_rss": "206048", "process_out_blocks": "2024", "process_user_time": 5.631688}
+[0m01:03:22.891730 [debug] [MainThread]: Command `dbt run` failed at 01:03:22.891244 after 5.98 seconds
+[0m01:03:22.893108 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708220bba660>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708202d36b10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x708201de8650>]}
+[0m01:03:22.894589 [debug] [MainThread]: Flushing usage events
+[0m01:03:23.920531 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:10:40.004932 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d770aa6e480>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d770a4a15e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d770aa6e2a0>]}
+
+
+============================== 01:10:40.011378 | f55149c5-6ac7-4b6a-a78d-2cbf989c794c ==============================
+[0m01:10:40.011378 [info ] [MainThread]: Running with dbt=1.9.3
+[0m01:10:40.012595 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/home/elmansy/Documents/dbt_GCP/sales_analytics/logs', 'debug': 'False', 'profiles_dir': '/home/elmansy/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m01:10:41.457121 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f55149c5-6ac7-4b6a-a78d-2cbf989c794c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d770bf87b30>]}
+[0m01:10:41.560159 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f55149c5-6ac7-4b6a-a78d-2cbf989c794c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d76e697af00>]}
+[0m01:10:41.561077 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m01:10:41.745596 [debug] [MainThread]: checksum: 5671c00892cdbcef29c3b00cc5ba7510c3d18a35c883caeb9ab9ee266dc29c8f, vars: {}, profile: , target: , version: 1.9.3
+[0m01:10:41.886327 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m01:10:41.887107 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f55149c5-6ac7-4b6a-a78d-2cbf989c794c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d770a6a5340>]}
+[0m01:10:43.694966 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'my_first_dbt_model' in the 'models' section of file 'models/example/schema.yml'
+[0m01:10:43.697309 [warn ] [MainThread]: [[33mWARNING[0m]: Did not find matching node for patch with name 'my_second_dbt_model' in the 'models' section of file 'models/example/schema.yml'
+[0m01:10:43.868444 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.sales_analytics.unique_my_first_dbt_model_id.16e066b321' (models/example/schema.yml) depends on a node named 'my_first_dbt_model' in package '' which was not found
+[0m01:10:43.869316 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.sales_analytics.not_null_my_first_dbt_model_id.5fb22c2710' (models/example/schema.yml) depends on a node named 'my_first_dbt_model' in package '' which was not found
+[0m01:10:43.870098 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.sales_analytics.unique_my_second_dbt_model_id.57a0f8c493' (models/example/schema.yml) depends on a node named 'my_second_dbt_model' in package '' which was not found
+[0m01:10:43.870827 [warn ] [MainThread]: [[33mWARNING[0m]: Test 'test.sales_analytics.not_null_my_second_dbt_model_id.151b76d778' (models/example/schema.yml) depends on a node named 'my_second_dbt_model' in package '' which was not found
+[0m01:10:43.987869 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.sales_analytics.example
+[0m01:10:43.996500 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f55149c5-6ac7-4b6a-a78d-2cbf989c794c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d76e5fa90a0>]}
+[0m01:10:44.136325 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m01:10:44.140193 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m01:10:44.163090 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f55149c5-6ac7-4b6a-a78d-2cbf989c794c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d76e4e4fa10>]}
+[0m01:10:44.164066 [info ] [MainThread]: Found 2 models, 492 macros
+[0m01:10:44.164996 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f55149c5-6ac7-4b6a-a78d-2cbf989c794c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d76f1951ee0>]}
+[0m01:10:44.168614 [info ] [MainThread]: 
+[0m01:10:44.169658 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m01:10:44.170379 [info ] [MainThread]: 
+[0m01:10:44.171787 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m01:10:44.181628 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_sales-analytics-453721'
+[0m01:10:44.182705 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:10:46.803393 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_sales-analytics-453721, now list_sales-analytics-453721_sales_dataset)
+[0m01:10:46.804180 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m01:10:47.315018 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f55149c5-6ac7-4b6a-a78d-2cbf989c794c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d76e5fe0a40>]}
+[0m01:10:47.315758 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m01:10:47.319478 [debug] [Thread-1 (]: Began running node model.sales_analytics.stg_sales
+[0m01:10:47.320508 [info ] [Thread-1 (]: 1 of 2 START sql view model sales_dataset.stg_sales ............................ [RUN]
+[0m01:10:47.321649 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_sales-analytics-453721_sales_dataset, now model.sales_analytics.stg_sales)
+[0m01:10:47.322660 [debug] [Thread-1 (]: Began compiling node model.sales_analytics.stg_sales
+[0m01:10:47.338252 [debug] [Thread-1 (]: Writing injected SQL for node "model.sales_analytics.stg_sales"
+[0m01:10:47.342619 [debug] [Thread-1 (]: Began executing node model.sales_analytics.stg_sales
+[0m01:10:47.394103 [debug] [Thread-1 (]: Writing runtime sql for node "model.sales_analytics.stg_sales"
+[0m01:10:47.395316 [debug] [Thread-1 (]: On model.sales_analytics.stg_sales: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "sales_analytics", "target_name": "dev", "node_id": "model.sales_analytics.stg_sales"} */
+
+
+  create or replace view `sales-analytics-453721`.`sales_dataset`.`stg_sales`
+  OPTIONS()
+  as 
+
+SELECT
+    order_id,
+    product_name,
+    amount,
+    country,
+    order_date,
+    
+    CASE 
+        WHEN DATE(order_date) >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 MONTH) THEN 'recent'
+        ELSE 'historical'
+    END AS partition_group
+  -- Dynamic partitioning
+FROM sales-analytics-453721.sales_dataset.raw_sales;
+
+
+[0m01:10:47.396270 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m01:10:48.747525 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=sales-analytics-453721&j=bq:US:d7759106-aa2b-4273-ab7d-cdcc5b57bdc5&page=queryresults
+[0m01:10:49.424859 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f55149c5-6ac7-4b6a-a78d-2cbf989c794c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d770ade7fe0>]}
+[0m01:10:49.426008 [info ] [Thread-1 (]: 1 of 2 OK created sql view model sales_dataset.stg_sales ....................... [[32mCREATE VIEW (0 processed)[0m in 2.10s]
+[0m01:10:49.427080 [debug] [Thread-1 (]: Finished running node model.sales_analytics.stg_sales
+[0m01:10:49.428543 [debug] [Thread-3 (]: Began running node model.sales_analytics.sales_final
+[0m01:10:49.429773 [info ] [Thread-3 (]: 2 of 2 START sql view model sales_dataset.sales_final .......................... [RUN]
+[0m01:10:49.431068 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.sales_analytics.sales_final'
+[0m01:10:49.432066 [debug] [Thread-3 (]: Began compiling node model.sales_analytics.sales_final
+[0m01:10:49.439874 [debug] [Thread-3 (]: Writing injected SQL for node "model.sales_analytics.sales_final"
+[0m01:10:49.441423 [debug] [Thread-3 (]: Began executing node model.sales_analytics.sales_final
+[0m01:10:49.448629 [debug] [Thread-3 (]: Writing runtime sql for node "model.sales_analytics.sales_final"
+[0m01:10:49.450268 [debug] [Thread-3 (]: On model.sales_analytics.sales_final: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "sales_analytics", "target_name": "dev", "node_id": "model.sales_analytics.sales_final"} */
+
+
+  create or replace view `sales-analytics-453721`.`sales_dataset`.`sales_final`
+  OPTIONS()
+  as SELECT
+    country,
+    product_name,
+    COUNT(order_id) AS total_orders,
+    SUM(amount) AS total_revenue,
+    
+    CASE 
+        WHEN DATE(order_date) >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 MONTH) THEN 'recent'
+        ELSE 'historical'
+    END AS partition_group
+ 
+FROM `sales-analytics-453721`.`sales_dataset`.`stg_sales`
+GROUP BY 1, 2, 5;
+
+
+[0m01:10:49.451428 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m01:10:50.181539 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=sales-analytics-453721&j=bq:US:536c0433-3c8c-440e-bc50-4069dc041a90&page=queryresults
+[0m01:10:50.900845 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f55149c5-6ac7-4b6a-a78d-2cbf989c794c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d76e42e1400>]}
+[0m01:10:50.901793 [info ] [Thread-3 (]: 2 of 2 OK created sql view model sales_dataset.sales_final ..................... [[32mCREATE VIEW (0 processed)[0m in 1.47s]
+[0m01:10:50.902912 [debug] [Thread-3 (]: Finished running node model.sales_analytics.sales_final
+[0m01:10:50.904964 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m01:10:50.906107 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m01:10:50.906729 [debug] [MainThread]: Connection 'model.sales_analytics.stg_sales' was properly closed.
+[0m01:10:50.907259 [debug] [MainThread]: Connection 'model.sales_analytics.sales_final' was properly closed.
+[0m01:10:50.907833 [info ] [MainThread]: 
+[0m01:10:50.908457 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 6.74 seconds (6.74s).
+[0m01:10:50.910021 [debug] [MainThread]: Command end result
+[0m01:10:50.954503 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m01:10:50.957466 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m01:10:50.968027 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/run_results.json
+[0m01:10:50.969057 [info ] [MainThread]: 
+[0m01:10:50.970070 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m01:10:50.970935 [info ] [MainThread]: 
+[0m01:10:50.971749 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m01:10:50.973436 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 11.125859, "process_in_blocks": "112", "process_kernel_time": 0.37422, "process_mem_max_rss": "214652", "process_out_blocks": "3072", "process_user_time": 6.879676}
+[0m01:10:50.974296 [debug] [MainThread]: Command `dbt run` succeeded at 01:10:50.974124 after 11.13 seconds
+[0m01:10:50.975027 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d770a86a660>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d770a128a40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d76e4f039b0>]}
+[0m01:10:50.975967 [debug] [MainThread]: Flushing usage events
+[0m01:10:52.023654 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:14:07.489497 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705359e2aa50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7053585acfb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7053591268d0>]}
+
+
+============================== 01:14:07.495814 | 3d053bff-cd64-4c9a-9469-2609ccffca56 ==============================
+[0m01:14:07.495814 [info ] [MainThread]: Running with dbt=1.9.3
+[0m01:14:07.496697 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/home/elmansy/Documents/dbt_GCP/sales_analytics/logs', 'version_check': 'True', 'profiles_dir': '/home/elmansy/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt test', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m01:14:08.986897 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3d053bff-cd64-4c9a-9469-2609ccffca56', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705333e4d520>]}
+[0m01:14:09.116092 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3d053bff-cd64-4c9a-9469-2609ccffca56', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705358195220>]}
+[0m01:14:09.117151 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m01:14:09.306316 [debug] [MainThread]: checksum: 5671c00892cdbcef29c3b00cc5ba7510c3d18a35c883caeb9ab9ee266dc29c8f, vars: {}, profile: , target: , version: 1.9.3
+[0m01:14:09.498574 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m01:14:09.499461 [debug] [MainThread]: Partial parsing: added file: sales_analytics://tests/sales_test.yml
+[0m01:14:09.947774 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3d053bff-cd64-4c9a-9469-2609ccffca56', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705333997ce0>]}
+[0m01:14:10.094382 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m01:14:10.099959 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m01:14:10.306556 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3d053bff-cd64-4c9a-9469-2609ccffca56', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705333a17d40>]}
+[0m01:14:10.307831 [info ] [MainThread]: Found 2 models, 2 data tests, 492 macros
+[0m01:14:10.308942 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3d053bff-cd64-4c9a-9469-2609ccffca56', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70533395a6f0>]}
+[0m01:14:10.313797 [info ] [MainThread]: 
+[0m01:14:10.315347 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m01:14:10.316637 [info ] [MainThread]: 
+[0m01:14:10.318399 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m01:14:10.329638 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_sales-analytics-453721_sales_dataset'
+[0m01:14:10.331171 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:14:12.633581 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3d053bff-cd64-4c9a-9469-2609ccffca56', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705359bdcda0>]}
+[0m01:14:12.635147 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m01:14:12.642403 [debug] [Thread-1 (]: Began running node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m01:14:12.643606 [debug] [Thread-2 (]: Began running node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m01:14:12.644409 [info ] [Thread-1 (]: 1 of 2 START test not_null_sales_final_country ................................. [RUN]
+[0m01:14:12.645562 [info ] [Thread-2 (]: 2 of 2 START test not_null_sales_final_total_orders ............................ [RUN]
+[0m01:14:12.646833 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_sales-analytics-453721_sales_dataset, now test.sales_analytics.not_null_sales_final_country.299e935e0e)
+[0m01:14:12.648056 [debug] [Thread-2 (]: Acquiring new bigquery connection 'test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab'
+[0m01:14:12.648774 [debug] [Thread-1 (]: Began compiling node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m01:14:12.649596 [debug] [Thread-2 (]: Began compiling node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m01:14:12.718328 [debug] [Thread-2 (]: Writing injected SQL for node "test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab"
+[0m01:14:12.719354 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_analytics.not_null_sales_final_country.299e935e0e"
+[0m01:14:12.720701 [debug] [Thread-1 (]: Began executing node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m01:14:12.768432 [debug] [Thread-2 (]: Began executing node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m01:14:12.785911 [debug] [Thread-1 (]: Writing runtime sql for node "test.sales_analytics.not_null_sales_final_country.299e935e0e"
+[0m01:14:12.787205 [debug] [Thread-2 (]: Writing runtime sql for node "test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab"
+[0m01:14:12.788900 [debug] [Thread-2 (]: On test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "sales_analytics", "target_name": "dev", "node_id": "test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select total_orders
+from `sales-analytics-453721`.`sales_dataset`.`sales_final`
+where total_orders is null
+
+
+
+      
+    ) dbt_internal_test
+[0m01:14:12.790463 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m01:14:12.794296 [debug] [Thread-1 (]: On test.sales_analytics.not_null_sales_final_country.299e935e0e: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "sales_analytics", "target_name": "dev", "node_id": "test.sales_analytics.not_null_sales_final_country.299e935e0e"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+    
+
+
+
+select country
+from `sales-analytics-453721`.`sales_dataset`.`sales_final`
+where country is null
+
+
+
+      
+    ) dbt_internal_test
+[0m01:14:12.795474 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m01:14:13.961479 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=sales-analytics-453721&j=bq:US:d92f0b16-d2f2-42d4-8993-0454b176a7b9&page=queryresults
+[0m01:14:14.112487 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=sales-analytics-453721&j=bq:US:1a3eafd4-2a51-4f54-94b9-d3158fa1139f&page=queryresults
+[0m01:14:15.096798 [info ] [Thread-2 (]: 2 of 2 PASS not_null_sales_final_total_orders .................................. [[32mPASS[0m in 2.45s]
+[0m01:14:15.100414 [debug] [Thread-2 (]: Finished running node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m01:14:15.098279 [info ] [Thread-1 (]: 1 of 2 PASS not_null_sales_final_country ....................................... [[32mPASS[0m in 2.45s]
+[0m01:14:15.101993 [debug] [Thread-1 (]: Finished running node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m01:14:15.105398 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m01:14:15.107504 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m01:14:15.108854 [debug] [MainThread]: Connection 'test.sales_analytics.not_null_sales_final_country.299e935e0e' was properly closed.
+[0m01:14:15.109616 [debug] [MainThread]: Connection 'test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab' was properly closed.
+[0m01:14:15.110495 [info ] [MainThread]: 
+[0m01:14:15.111641 [info ] [MainThread]: Finished running 2 data tests in 0 hours 0 minutes and 4.79 seconds (4.79s).
+[0m01:14:15.113970 [debug] [MainThread]: Command end result
+[0m01:14:15.167307 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m01:14:15.184598 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m01:14:15.197616 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/run_results.json
+[0m01:14:15.198506 [info ] [MainThread]: 
+[0m01:14:15.199403 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m01:14:15.200261 [info ] [MainThread]: 
+[0m01:14:15.201126 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
+[0m01:14:15.203347 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 7.874812, "process_in_blocks": "1968", "process_kernel_time": 0.413063, "process_mem_max_rss": "213244", "process_out_blocks": "3064", "process_user_time": 5.918583}
+[0m01:14:15.204533 [debug] [MainThread]: Command `dbt test` succeeded at 01:14:15.204338 after 7.88 seconds
+[0m01:14:15.205253 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705333a7a660>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x705333ed9be0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70535898d130>]}
+[0m01:14:15.206066 [debug] [MainThread]: Flushing usage events
+[0m01:14:16.212716 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:14:43.305582 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7326f26bee10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7326f23df0b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7326f3a67fb0>]}
+
+
+============================== 01:14:43.311211 | 72edefc8-1e86-4127-855b-49dcaf6fecf9 ==============================
+[0m01:14:43.311211 [info ] [MainThread]: Running with dbt=1.9.3
+[0m01:14:43.312924 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/elmansy/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/home/elmansy/Documents/dbt_GCP/sales_analytics/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt docs generate', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m01:14:45.284353 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '72edefc8-1e86-4127-855b-49dcaf6fecf9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7326cf013ec0>]}
+[0m01:14:45.434409 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '72edefc8-1e86-4127-855b-49dcaf6fecf9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7326f2755b80>]}
+[0m01:14:45.436165 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m01:14:45.706877 [debug] [MainThread]: checksum: 5671c00892cdbcef29c3b00cc5ba7510c3d18a35c883caeb9ab9ee266dc29c8f, vars: {}, profile: , target: , version: 1.9.3
+[0m01:14:46.061411 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m01:14:46.062961 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m01:14:46.226441 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '72edefc8-1e86-4127-855b-49dcaf6fecf9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7326ce1c9340>]}
+[0m01:14:46.282418 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '72edefc8-1e86-4127-855b-49dcaf6fecf9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7326ce1ef7d0>]}
+[0m01:14:46.283973 [info ] [MainThread]: Found 2 models, 2 data tests, 492 macros
+[0m01:14:46.285187 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '72edefc8-1e86-4127-855b-49dcaf6fecf9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7326cdf3db80>]}
+[0m01:14:46.290651 [info ] [MainThread]: 
+[0m01:14:46.292427 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m01:14:46.294219 [info ] [MainThread]: 
+[0m01:14:46.297378 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m01:14:46.310566 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_sales-analytics-453721_sales_dataset'
+[0m01:14:46.312782 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:14:48.472828 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '72edefc8-1e86-4127-855b-49dcaf6fecf9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7326ce15e7e0>]}
+[0m01:14:48.473813 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m01:14:48.477434 [debug] [Thread-1 (]: Began running node model.sales_analytics.stg_sales
+[0m01:14:48.478289 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_sales-analytics-453721_sales_dataset, now model.sales_analytics.stg_sales)
+[0m01:14:48.478876 [debug] [Thread-1 (]: Began compiling node model.sales_analytics.stg_sales
+[0m01:14:48.497192 [debug] [Thread-1 (]: Writing injected SQL for node "model.sales_analytics.stg_sales"
+[0m01:14:48.498193 [debug] [Thread-1 (]: Began executing node model.sales_analytics.stg_sales
+[0m01:14:48.499022 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m01:14:48.500879 [debug] [Thread-1 (]: Finished running node model.sales_analytics.stg_sales
+[0m01:14:48.502561 [debug] [Thread-3 (]: Began running node model.sales_analytics.sales_final
+[0m01:14:48.503911 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.sales_analytics.sales_final'
+[0m01:14:48.504578 [debug] [Thread-3 (]: Began compiling node model.sales_analytics.sales_final
+[0m01:14:48.510400 [debug] [Thread-3 (]: Writing injected SQL for node "model.sales_analytics.sales_final"
+[0m01:14:48.511575 [debug] [Thread-3 (]: Began executing node model.sales_analytics.sales_final
+[0m01:14:48.512343 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m01:14:48.514126 [debug] [Thread-3 (]: Finished running node model.sales_analytics.sales_final
+[0m01:14:48.517594 [debug] [Thread-2 (]: Began running node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m01:14:48.518683 [debug] [Thread-1 (]: Began running node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m01:14:48.520059 [debug] [Thread-2 (]: Acquiring new bigquery connection 'test.sales_analytics.not_null_sales_final_country.299e935e0e'
+[0m01:14:48.521048 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sales_analytics.stg_sales, now test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab)
+[0m01:14:48.521757 [debug] [Thread-2 (]: Began compiling node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m01:14:48.522626 [debug] [Thread-1 (]: Began compiling node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m01:14:48.563909 [debug] [Thread-2 (]: Writing injected SQL for node "test.sales_analytics.not_null_sales_final_country.299e935e0e"
+[0m01:14:48.565584 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab"
+[0m01:14:48.566662 [debug] [Thread-2 (]: Began executing node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m01:14:48.567385 [debug] [Thread-1 (]: Began executing node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m01:14:48.568284 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m01:14:48.569500 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m01:14:48.571550 [debug] [Thread-2 (]: Finished running node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m01:14:48.573171 [debug] [Thread-1 (]: Finished running node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m01:14:48.575810 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m01:14:48.576795 [debug] [MainThread]: Connection 'test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab' was properly closed.
+[0m01:14:48.577812 [debug] [MainThread]: Connection 'model.sales_analytics.sales_final' was properly closed.
+[0m01:14:48.578853 [debug] [MainThread]: Connection 'test.sales_analytics.not_null_sales_final_country.299e935e0e' was properly closed.
+[0m01:14:48.581784 [debug] [MainThread]: Command end result
+[0m01:14:48.727908 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m01:14:48.732613 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m01:14:48.744667 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/run_results.json
+[0m01:14:48.748988 [debug] [MainThread]: Acquiring new bigquery connection 'generate_catalog'
+[0m01:14:48.749769 [info ] [MainThread]: Building catalog
+[0m01:14:48.758249 [debug] [ThreadPool]: Acquiring new bigquery connection 'sales-analytics-453721.information_schema'
+[0m01:14:48.825379 [debug] [ThreadPool]: On sales-analytics-453721.information_schema: /* {"app": "dbt", "dbt_version": "1.9.3", "profile_name": "sales_analytics", "target_name": "dev", "connection_name": "sales-analytics-453721.information_schema"} */
+
+    with
+                table_shards_stage as (
+    select
+        tables.project_id as table_catalog,
+        tables.dataset_id as table_schema,
+        coalesce(REGEXP_EXTRACT(tables.table_id, '^(.+)[0-9]{8}$'), tables.table_id) as table_name,
+        tables.table_id as shard_name,
+        REGEXP_EXTRACT(tables.table_id, '^.+([0-9]{8})$') as shard_index,
+        REGEXP_CONTAINS(tables.table_id, '^.+[0-9]{8}$') and tables.type = 1 as is_date_shard,
+        case
+            when materialized_views.table_name is not null then 'materialized view'
+            when tables.type = 1 then 'table'
+            when tables.type = 2 then 'view'
+            else 'external'
+        end as table_type,
+        tables.type = 1 as is_table,
+        JSON_VALUE(table_description.option_value) as table_comment,
+        tables.size_bytes,
+        tables.row_count
+    from `sales-analytics-453721`.`sales_dataset`.__TABLES__ tables
+    left join `sales-analytics-453721`.`sales_dataset`.INFORMATION_SCHEMA.MATERIALIZED_VIEWS materialized_views
+        on materialized_views.table_catalog = tables.project_id
+        and materialized_views.table_schema = tables.dataset_id
+        and materialized_views.table_name = tables.table_id
+    left join `sales-analytics-453721`.`sales_dataset`.INFORMATION_SCHEMA.TABLE_OPTIONS table_description
+        on table_description.table_catalog = tables.project_id
+        and table_description.table_schema = tables.dataset_id
+        and table_description.table_name = tables.table_id
+        and table_description.option_name = 'description'
+),
+                table_shards as (
+                    select * from table_shards_stage
+                    where ((
+                                upper(table_schema) = upper('sales_dataset')
+                            and upper(table_name) = upper('sales_final')
+                            ) or (
+                                upper(table_schema) = upper('sales_dataset')
+                            and upper(table_name) = upper('stg_sales')
+                            ))
+                ),
+                tables as (
+    select distinct
+        table_catalog,
+        table_schema,
+        table_name,
+        is_date_shard,
+        table_type,
+        is_table,
+        table_comment
+    from table_shards
+),
+                table_stats as (
+    select
+        table_catalog,
+        table_schema,
+        table_name,
+        max(shard_name) as latest_shard_name,
+        min(shard_index) as shard_min,
+        max(shard_index) as shard_max,
+        count(shard_index) as shard_count,
+        sum(size_bytes) as size_bytes,
+        sum(row_count) as row_count
+    from table_shards
+    group by 1, 2, 3
+),
+
+                columns as (
+    select
+        columns.table_catalog,
+        columns.table_schema,
+        columns.table_name as shard_name,
+        coalesce(paths.field_path, '<unknown>') as column_name,
+        -- invent a row number to account for nested fields
+        -- BQ does not treat these nested properties as independent fields
+        row_number() over (
+            partition by
+                columns.table_catalog,
+                columns.table_schema,
+                columns.table_name
+            order by
+                columns.ordinal_position,
+                paths.field_path
+        ) as column_index,
+        coalesce(paths.data_type, '<unknown>') as column_type,
+        paths.description as column_comment,
+        case when columns.is_partitioning_column = 'YES' then 1 else 0 end as is_partitioning_column,
+        case when columns.is_partitioning_column = 'YES' then paths.field_path end as partition_column,
+        case when columns.clustering_ordinal_position is not null then 1 else 0 end as is_clustering_column,
+        case when columns.clustering_ordinal_position is not null then paths.field_path end as cluster_column,
+        columns.clustering_ordinal_position
+    from `sales-analytics-453721`.`sales_dataset`.INFORMATION_SCHEMA.COLUMNS columns
+    join `sales-analytics-453721`.`sales_dataset`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS paths
+        on paths.table_catalog = columns.table_catalog
+        and paths.table_schema = columns.table_schema
+        and paths.table_name = columns.table_name
+        and paths.column_name = columns.column_name
+    where columns.ordinal_position is not null
+),
+                column_stats as (
+    select
+        table_catalog,
+        table_schema,
+        shard_name,
+        max(is_partitioning_column) = 1 as is_partitioned,
+        max(partition_column) as partition_column,
+        max(is_clustering_column) = 1 as is_clustered,
+        array_to_string(
+            array_agg(
+                cluster_column ignore nulls
+                order by clustering_ordinal_position
+            ), ', '
+        ) as clustering_columns
+    from columns
+    group by 1, 2, 3
+)
+
+            
+    select
+        tables.table_catalog as table_database,
+        tables.table_schema,
+        case
+            when tables.is_date_shard then concat(tables.table_name, '*')
+            else tables.table_name
+        end as table_name,
+        tables.table_type,
+        tables.table_comment,
+        -- coalesce column metadata fields to ensure they are non-null for catalog generation
+        -- external table columns are not present in COLUMN_FIELD_PATHS
+        coalesce(columns.column_name, '<unknown>') as column_name,
+        coalesce(columns.column_index, 1) as column_index,
+        coalesce(columns.column_type, '<unknown>') as column_type,
+        coalesce(columns.column_comment, '') as column_comment,
+
+        'Shard count' as `stats__date_shards__label`,
+        table_stats.shard_count as `stats__date_shards__value`,
+        'The number of date shards in this table' as `stats__date_shards__description`,
+        tables.is_date_shard as `stats__date_shards__include`,
+
+        'Shard (min)' as `stats__date_shard_min__label`,
+        table_stats.shard_min as `stats__date_shard_min__value`,
+        'The first date shard in this table' as `stats__date_shard_min__description`,
+        tables.is_date_shard as `stats__date_shard_min__include`,
+
+        'Shard (max)' as `stats__date_shard_max__label`,
+        table_stats.shard_max as `stats__date_shard_max__value`,
+        'The last date shard in this table' as `stats__date_shard_max__description`,
+        tables.is_date_shard as `stats__date_shard_max__include`,
+
+        '# Rows' as `stats__num_rows__label`,
+        table_stats.row_count as `stats__num_rows__value`,
+        'Approximate count of rows in this table' as `stats__num_rows__description`,
+        tables.is_table as `stats__num_rows__include`,
+
+        'Approximate Size' as `stats__num_bytes__label`,
+        table_stats.size_bytes as `stats__num_bytes__value`,
+        'Approximate size of table as reported by BigQuery' as `stats__num_bytes__description`,
+        tables.is_table as `stats__num_bytes__include`,
+
+        'Partitioned By' as `stats__partitioning_type__label`,
+        column_stats.partition_column as `stats__partitioning_type__value`,
+        'The partitioning column for this table' as `stats__partitioning_type__description`,
+        column_stats.is_partitioned as `stats__partitioning_type__include`,
+
+        'Clustered By' as `stats__clustering_fields__label`,
+        column_stats.clustering_columns as `stats__clustering_fields__value`,
+        'The clustering columns for this table' as `stats__clustering_fields__description`,
+        column_stats.is_clustered as `stats__clustering_fields__include`
+
+    from tables
+    join table_stats
+        on table_stats.table_catalog = tables.table_catalog
+        and table_stats.table_schema = tables.table_schema
+        and table_stats.table_name = tables.table_name
+    left join column_stats
+        on column_stats.table_catalog = tables.table_catalog
+        and column_stats.table_schema = tables.table_schema
+        and column_stats.shard_name = table_stats.latest_shard_name
+    left join columns
+        on columns.table_catalog = tables.table_catalog
+        and columns.table_schema = tables.table_schema
+        and columns.shard_name = table_stats.latest_shard_name
+
+  
+[0m01:14:48.827028 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m01:14:49.597100 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=sales-analytics-453721&j=bq:US:eb40bb7b-dd83-4a67-9004-e59e755f2570&page=queryresults
+[0m01:14:51.761453 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m01:14:51.779724 [debug] [MainThread]: Wrote artifact CatalogArtifact to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/catalog.json
+[0m01:14:51.935853 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m01:14:51.938283 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m01:14:51.938949 [info ] [MainThread]: Catalog written to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/catalog.json
+[0m01:14:51.940912 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 8.790255, "process_in_blocks": "3392", "process_kernel_time": 0.473166, "process_mem_max_rss": "208796", "process_out_blocks": "5456", "process_user_time": 5.272286}
+[0m01:14:51.942009 [debug] [MainThread]: Command `dbt docs generate` succeeded at 01:14:51.941781 after 8.79 seconds
+[0m01:14:51.942714 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m01:14:51.943375 [debug] [MainThread]: Connection 'sales-analytics-453721.information_schema' was properly closed.
+[0m01:14:51.944195 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7326ce663d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7326cdf97b90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7326cdd558e0>]}
+[0m01:14:51.945172 [debug] [MainThread]: Flushing usage events
+[0m01:14:53.487733 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m01:15:14.977913 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f7bea8b740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f7c0878290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f7c02c08f0>]}
+
+
+============================== 01:15:14.983687 | 169a106e-da45-43b2-b0ec-47354dcf648e ==============================
+[0m01:15:14.983687 [info ] [MainThread]: Running with dbt=1.9.3
+[0m01:15:14.984729 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/elmansy/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/home/elmansy/Documents/dbt_GCP/sales_analytics/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt docs serve --port 5050', 'send_anonymous_usage_stats': 'True'}
+[0m01:15:16.617780 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '169a106e-da45-43b2-b0ec-47354dcf648e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f79abb5520>]}
+[0m01:15:16.732954 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '169a106e-da45-43b2-b0ec-47354dcf648e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f79ac43f20>]}
+[0m15:49:03.134428 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a6b9445dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a6b96be6f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a6baa49af0>]}
+
+
+============================== 15:49:03.140952 | 5c6a2f75-4d33-4387-9d8d-b7ec8d19adfa ==============================
+[0m15:49:03.140952 [info ] [MainThread]: Running with dbt=1.10.6
+[0m15:49:03.142137 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/elmansy/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/home/elmansy/Documents/dbt_GCP/sales_analytics/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt init sales_analytics', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:49:03.172283 [info ] [MainThread]: Setting up your profile.
+[0m15:49:13.122140 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 10.091382, "process_in_blocks": "46712", "process_kernel_time": 0.203276, "process_mem_max_rss": "96604", "process_out_blocks": "8", "process_user_time": 2.443836}
+[0m15:49:13.123296 [debug] [MainThread]: Command `dbt init` succeeded at 15:49:13.123051 after 10.09 seconds
+[0m15:49:13.124407 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a6b9491be0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a6b95e53a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x73a6b89fa2a0>]}
+[0m15:49:13.125514 [debug] [MainThread]: Flushing usage events
+[0m15:49:14.090136 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:49:40.277103 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77662f2571a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77662d74b440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77662cc69fa0>]}
+
+
+============================== 15:49:40.282514 | 6340451f-68d0-47db-a59e-b986fe123ef0 ==============================
+[0m15:49:40.282514 [info ] [MainThread]: Running with dbt=1.10.6
+[0m15:49:40.283819 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/elmansy/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/home/elmansy/Documents/dbt_GCP/sales_analytics/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'invocation_command': 'dbt init sales_analytics', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m15:49:40.306022 [info ] [MainThread]: Setting up your profile.
+[0m15:51:51.397286 [info ] [MainThread]: Profile sales_analytics written to /home/elmansy/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m15:51:51.399718 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 131.22728, "process_in_blocks": "2800", "process_kernel_time": 0.745068, "process_mem_max_rss": "358872", "process_out_blocks": "24", "process_user_time": 6.97257}
+[0m15:51:51.400602 [debug] [MainThread]: Command `dbt init` succeeded at 15:51:51.400377 after 131.23 seconds
+[0m15:51:51.401294 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77662d7718b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x776603797e00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7766037b9940>]}
+[0m15:51:51.401953 [debug] [MainThread]: Flushing usage events
+[0m15:51:52.812533 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:55:24.506768 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adba6349580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adba61b5e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adba6a01fa0>]}
+
+
+============================== 15:55:24.512819 | e8b4be50-46e9-49c2-bde8-710941a3827f ==============================
+[0m15:55:24.512819 [info ] [MainThread]: Running with dbt=1.10.6
+[0m15:55:24.514139 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/home/elmansy/Documents/dbt_GCP/sales_analytics/logs', 'profiles_dir': '/home/elmansy/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m15:55:24.538366 [info ] [MainThread]: dbt version: 1.10.6
+[0m15:55:24.539218 [info ] [MainThread]: python version: 3.12.7
+[0m15:55:24.540058 [info ] [MainThread]: python path: /home/elmansy/dbt-env/bin/python3
+[0m15:55:24.540854 [info ] [MainThread]: os info: Linux-6.11.0-19-generic-x86_64-with-glibc2.40
+[0m15:55:30.012961 [info ] [MainThread]: Using profiles dir at /home/elmansy/.dbt
+[0m15:55:30.013969 [info ] [MainThread]: Using profiles.yml file at /home/elmansy/.dbt/profiles.yml
+[0m15:55:30.014933 [info ] [MainThread]: Using dbt_project.yml file at /home/elmansy/Documents/dbt_GCP/sales_analytics/dbt_project.yml
+[0m15:55:30.016186 [info ] [MainThread]: adapter type: bigquery
+[0m15:55:30.017033 [info ] [MainThread]: adapter version: 1.10.1
+[0m15:55:30.287271 [info ] [MainThread]: Configuration:
+[0m15:55:30.288424 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m15:55:30.289141 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m15:55:30.289969 [info ] [MainThread]: Required dependencies:
+[0m15:55:30.290734 [debug] [MainThread]: Executing "git --help"
+[0m15:55:30.308998 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m15:55:30.310178 [debug] [MainThread]: STDERR: "b''"
+[0m15:55:30.310972 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m15:55:30.311674 [info ] [MainThread]: Connection:
+[0m15:55:30.312492 [info ] [MainThread]:   method: oauth
+[0m15:55:30.313359 [info ] [MainThread]:   database: sales-analytics-453721
+[0m15:55:30.314157 [info ] [MainThread]:   execution_project: sales-analytics-453721
+[0m15:55:30.315185 [info ] [MainThread]:   schema: sales_dataset
+[0m15:55:30.316272 [info ] [MainThread]:   location: US
+[0m15:55:30.317159 [info ] [MainThread]:   priority: interactive
+[0m15:55:30.317971 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m15:55:30.318751 [info ] [MainThread]:   impersonate_service_account: None
+[0m15:55:30.319910 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m15:55:30.320934 [info ] [MainThread]:   job_retries: 1
+[0m15:55:30.322315 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m15:55:30.323474 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m15:55:30.324504 [info ] [MainThread]:   timeout_seconds: 300
+[0m15:55:30.325415 [info ] [MainThread]:   client_id: None
+[0m15:55:30.325923 [info ] [MainThread]:   token_uri: None
+[0m15:55:30.326693 [info ] [MainThread]:   compute_region: None
+[0m15:55:30.327706 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m15:55:30.328845 [info ] [MainThread]:   gcs_bucket: None
+[0m15:55:30.329684 [info ] [MainThread]:   dataproc_batch: None
+[0m15:55:30.330927 [info ] [MainThread]: Registered adapter: bigquery=1.10.1
+[0m15:55:30.648459 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m15:55:30.649219 [debug] [MainThread]: On debug: select 1 as id
+[0m15:55:30.649987 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:55:36.363392 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=sales-analytics-453721&j=bq:US:07c08733-d13e-4bb1-8619-45cf0eff16f1&page=queryresults
+[0m15:55:37.172575 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m15:55:37.173421 [info ] [MainThread]: [32mAll checks passed![0m
+[0m15:55:37.178104 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 12.777983, "process_in_blocks": "151424", "process_kernel_time": 0.797004, "process_mem_max_rss": "367032", "process_out_blocks": "40", "process_user_time": 8.239044}
+[0m15:55:37.178932 [debug] [MainThread]: Command `dbt debug` succeeded at 15:55:37.178730 after 12.78 seconds
+[0m15:55:37.179486 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m15:55:37.180155 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adba62886e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adba5faaae0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7adb7c999670>]}
+[0m15:55:37.181541 [debug] [MainThread]: Flushing usage events
+[0m15:55:38.094323 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:05:47.343489 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d69bbf1f2c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d69bc748110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d69bc019ee0>]}
+
+
+============================== 16:05:47.358704 | e206652d-6516-4291-9497-a08f1e058bf9 ==============================
+[0m16:05:47.358704 [info ] [MainThread]: Running with dbt=1.10.6
+[0m16:05:47.361775 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/elmansy/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/home/elmansy/Documents/dbt_GCP/sales_analytics/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt compile', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:05:52.906097 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e206652d-6516-4291-9497-a08f1e058bf9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d69917ccc50>]}
+[0m16:05:53.025448 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e206652d-6516-4291-9497-a08f1e058bf9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d6991c92ff0>]}
+[0m16:05:53.026819 [info ] [MainThread]: Registered adapter: bigquery=1.10.1
+[0m16:05:53.301963 [debug] [MainThread]: checksum: f6e4baf4de20596ffb9d14e6ef805989eb0e1950dedc3cc83d03f20aa023904c, vars: {}, profile: , target: , version: 1.10.6
+[0m16:05:53.448940 [info ] [MainThread]: Unable to do partial parsing because of a version mismatch
+[0m16:05:53.449733 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'e206652d-6516-4291-9497-a08f1e058bf9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d69bb7d0200>]}
+[0m16:05:56.234295 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.sales_analytics.example
+[0m16:05:56.246662 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e206652d-6516-4291-9497-a08f1e058bf9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d6990365160>]}
+[0m16:05:56.413780 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m16:05:56.418062 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m16:05:56.447958 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e206652d-6516-4291-9497-a08f1e058bf9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d69903c5bb0>]}
+[0m16:05:56.448849 [info ] [MainThread]: Found 2 models, 2 data tests, 497 macros
+[0m16:05:56.449503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e206652d-6516-4291-9497-a08f1e058bf9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d6991366390>]}
+[0m16:05:56.452379 [info ] [MainThread]: 
+[0m16:05:56.453071 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:05:56.453591 [info ] [MainThread]: 
+[0m16:05:56.454508 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m16:05:56.461220 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_sales-analytics-453721_sales_dataset'
+[0m16:05:56.461950 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:06:01.659515 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e206652d-6516-4291-9497-a08f1e058bf9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d6990377680>]}
+[0m16:06:01.660271 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:06:01.668244 [debug] [Thread-1 (]: Began running node model.sales_analytics.stg_sales
+[0m16:06:01.669552 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_sales-analytics-453721_sales_dataset, now model.sales_analytics.stg_sales)
+[0m16:06:01.670945 [debug] [Thread-1 (]: Began compiling node model.sales_analytics.stg_sales
+[0m16:06:01.688214 [debug] [Thread-1 (]: Writing injected SQL for node "model.sales_analytics.stg_sales"
+[0m16:06:01.689524 [debug] [Thread-1 (]: Began executing node model.sales_analytics.stg_sales
+[0m16:06:01.690664 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:06:01.692743 [debug] [Thread-1 (]: Finished running node model.sales_analytics.stg_sales
+[0m16:06:01.694437 [debug] [Thread-3 (]: Began running node model.sales_analytics.sales_final
+[0m16:06:01.695606 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.sales_analytics.sales_final'
+[0m16:06:01.696555 [debug] [Thread-3 (]: Began compiling node model.sales_analytics.sales_final
+[0m16:06:01.704079 [debug] [Thread-3 (]: Writing injected SQL for node "model.sales_analytics.sales_final"
+[0m16:06:01.705745 [debug] [Thread-3 (]: Began executing node model.sales_analytics.sales_final
+[0m16:06:01.706975 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m16:06:01.709108 [debug] [Thread-3 (]: Finished running node model.sales_analytics.sales_final
+[0m16:06:01.711013 [debug] [Thread-2 (]: Began running node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m16:06:01.712385 [debug] [Thread-1 (]: Began running node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m16:06:01.713814 [debug] [Thread-2 (]: Acquiring new bigquery connection 'test.sales_analytics.not_null_sales_final_country.299e935e0e'
+[0m16:06:01.715183 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sales_analytics.stg_sales, now test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab)
+[0m16:06:01.715935 [debug] [Thread-2 (]: Began compiling node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m16:06:01.716753 [debug] [Thread-1 (]: Began compiling node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m16:06:01.768805 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab"
+[0m16:06:01.765725 [debug] [Thread-2 (]: Writing injected SQL for node "test.sales_analytics.not_null_sales_final_country.299e935e0e"
+[0m16:06:01.770773 [debug] [Thread-1 (]: Began executing node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m16:06:01.771747 [debug] [Thread-2 (]: Began executing node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m16:06:01.773062 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:06:01.774569 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m16:06:01.776421 [debug] [Thread-1 (]: Finished running node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m16:06:01.778349 [debug] [Thread-2 (]: Finished running node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m16:06:01.781928 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:06:01.782919 [debug] [MainThread]: Connection 'test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab' was properly closed.
+[0m16:06:01.783801 [debug] [MainThread]: Connection 'model.sales_analytics.sales_final' was properly closed.
+[0m16:06:01.784579 [debug] [MainThread]: Connection 'test.sales_analytics.not_null_sales_final_country.299e935e0e' was properly closed.
+[0m16:06:01.787034 [debug] [MainThread]: Command end result
+[0m16:06:01.831314 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m16:06:01.835137 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m16:06:01.849673 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/run_results.json
+[0m16:06:01.852644 [debug] [MainThread]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 14.700695, "process_in_blocks": "166624", "process_kernel_time": 0.861437, "process_mem_max_rss": "373620", "process_out_blocks": "3088", "process_user_time": 11.445241}
+[0m16:06:01.853941 [debug] [MainThread]: Command `dbt compile` succeeded at 16:06:01.853570 after 14.70 seconds
+[0m16:06:01.854805 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d69baf0b470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d6990356330>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d6990364920>]}
+[0m16:06:01.855773 [debug] [MainThread]: Flushing usage events
+[0m16:06:03.028457 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:07:54.803206 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7602f53317c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7602f5254ad0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7602f52562a0>]}
+
+
+============================== 16:07:54.810590 | a6b90951-0c96-40e8-a158-a8d546aa5426 ==============================
+[0m16:07:54.810590 [info ] [MainThread]: Running with dbt=1.10.6
+[0m16:07:54.812153 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/home/elmansy/.dbt', 'log_path': '/home/elmansy/Documents/dbt_GCP/sales_analytics/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m16:07:59.995814 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a6b90951-0c96-40e8-a158-a8d546aa5426', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7602f40b7e00>]}
+[0m16:08:00.160642 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a6b90951-0c96-40e8-a158-a8d546aa5426', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7602caba4800>]}
+[0m16:08:00.162002 [info ] [MainThread]: Registered adapter: bigquery=1.10.1
+[0m16:08:00.546958 [debug] [MainThread]: checksum: f6e4baf4de20596ffb9d14e6ef805989eb0e1950dedc3cc83d03f20aa023904c, vars: {}, profile: , target: , version: 1.10.6
+[0m16:08:00.790080 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m16:08:00.791428 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m16:08:00.811342 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.sales_analytics.example
+[0m16:08:00.889673 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a6b90951-0c96-40e8-a158-a8d546aa5426', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7602ca62d760>]}
+[0m16:08:01.077224 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m16:08:01.080588 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m16:08:01.320345 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a6b90951-0c96-40e8-a158-a8d546aa5426', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7602caaccef0>]}
+[0m16:08:01.321446 [info ] [MainThread]: Found 2 models, 2 data tests, 497 macros
+[0m16:08:01.322336 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a6b90951-0c96-40e8-a158-a8d546aa5426', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7602ca93c380>]}
+[0m16:08:01.326383 [info ] [MainThread]: 
+[0m16:08:01.327318 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:08:01.328138 [info ] [MainThread]: 
+[0m16:08:01.329470 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m16:08:01.338941 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_sales-analytics-453721'
+[0m16:08:01.339757 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:08:04.446368 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_sales-analytics-453721, now list_sales-analytics-453721_sales_dataset)
+[0m16:08:04.447504 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m16:08:05.103979 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a6b90951-0c96-40e8-a158-a8d546aa5426', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7602ca8b72c0>]}
+[0m16:08:05.104933 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:08:05.108357 [debug] [Thread-1 (]: Began running node model.sales_analytics.stg_sales
+[0m16:08:05.109427 [info ] [Thread-1 (]: 1 of 2 START sql view model sales_dataset.stg_sales ............................ [RUN]
+[0m16:08:05.110165 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_sales-analytics-453721_sales_dataset, now model.sales_analytics.stg_sales)
+[0m16:08:05.110788 [debug] [Thread-1 (]: Began compiling node model.sales_analytics.stg_sales
+[0m16:08:05.127894 [debug] [Thread-1 (]: Writing injected SQL for node "model.sales_analytics.stg_sales"
+[0m16:08:05.129063 [debug] [Thread-1 (]: Began executing node model.sales_analytics.stg_sales
+[0m16:08:05.189022 [debug] [Thread-1 (]: Writing runtime sql for node "model.sales_analytics.stg_sales"
+[0m16:08:05.190717 [debug] [Thread-1 (]: On model.sales_analytics.stg_sales: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sales_analytics", "target_name": "dev", "node_id": "model.sales_analytics.stg_sales"} */
+
+
+  create or replace view `sales-analytics-453721`.`sales_dataset`.`stg_sales`
+  OPTIONS()
+  as 
+
+SELECT
+    order_id,
+    product_name,
+    amount,
+    country,
+    order_date,
+    
+    CASE 
+        WHEN DATE(order_date) >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 MONTH) THEN 'recent'
+        ELSE 'historical'
+    END AS partition_group
+  -- Dynamic partitioning
+FROM sales-analytics-453721.sales_dataset.raw_sales;
+
+
+[0m16:08:05.191522 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:08:05.922822 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=sales-analytics-453721&j=bq:US:69568705-0ec8-4877-964c-fce82ddf85df&page=queryresults
+[0m16:08:06.724905 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a6b90951-0c96-40e8-a158-a8d546aa5426', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7602c811ac60>]}
+[0m16:08:06.726178 [info ] [Thread-1 (]: 1 of 2 OK created sql view model sales_dataset.stg_sales ....................... [[32mCREATE VIEW (0 processed)[0m in 1.61s]
+[0m16:08:06.727222 [debug] [Thread-1 (]: Finished running node model.sales_analytics.stg_sales
+[0m16:08:06.728411 [debug] [Thread-3 (]: Began running node model.sales_analytics.sales_final
+[0m16:08:06.729307 [info ] [Thread-3 (]: 2 of 2 START sql view model sales_dataset.sales_final .......................... [RUN]
+[0m16:08:06.730576 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.sales_analytics.sales_final'
+[0m16:08:06.731600 [debug] [Thread-3 (]: Began compiling node model.sales_analytics.sales_final
+[0m16:08:06.739108 [debug] [Thread-3 (]: Writing injected SQL for node "model.sales_analytics.sales_final"
+[0m16:08:06.740490 [debug] [Thread-3 (]: Began executing node model.sales_analytics.sales_final
+[0m16:08:06.746635 [debug] [Thread-3 (]: Writing runtime sql for node "model.sales_analytics.sales_final"
+[0m16:08:06.748284 [debug] [Thread-3 (]: On model.sales_analytics.sales_final: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sales_analytics", "target_name": "dev", "node_id": "model.sales_analytics.sales_final"} */
+
+
+  create or replace view `sales-analytics-453721`.`sales_dataset`.`sales_final`
+  OPTIONS()
+  as SELECT
+    country,
+    product_name,
+    COUNT(order_id) AS total_orders,
+    SUM(amount) AS total_revenue,
+    
+    CASE 
+        WHEN DATE(order_date) >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 MONTH) THEN 'recent'
+        ELSE 'historical'
+    END AS partition_group
+ 
+FROM `sales-analytics-453721`.`sales_dataset`.`stg_sales`
+GROUP BY 1, 2, 5;
+
+
+[0m16:08:06.749494 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m16:08:07.597590 [debug] [Thread-3 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=sales-analytics-453721&j=bq:US:bd91216a-7179-4070-a54c-7f0840e21ef1&page=queryresults
+[0m16:08:08.179192 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a6b90951-0c96-40e8-a158-a8d546aa5426', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7602c8147980>]}
+[0m16:08:08.180731 [info ] [Thread-3 (]: 2 of 2 OK created sql view model sales_dataset.sales_final ..................... [[32mCREATE VIEW (0 processed)[0m in 1.45s]
+[0m16:08:08.182373 [debug] [Thread-3 (]: Finished running node model.sales_analytics.sales_final
+[0m16:08:08.186246 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:08:08.187428 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:08:08.188421 [debug] [MainThread]: Connection 'model.sales_analytics.stg_sales' was properly closed.
+[0m16:08:08.189356 [debug] [MainThread]: Connection 'model.sales_analytics.sales_final' was properly closed.
+[0m16:08:08.190537 [info ] [MainThread]: 
+[0m16:08:08.191618 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 6.86 seconds (6.86s).
+[0m16:08:08.193581 [debug] [MainThread]: Command end result
+[0m16:08:08.245029 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m16:08:08.251279 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m16:08:08.267945 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/run_results.json
+[0m16:08:08.269071 [info ] [MainThread]: 
+[0m16:08:08.270031 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m16:08:08.271384 [info ] [MainThread]: 
+[0m16:08:08.272373 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m16:08:08.274149 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 13.596808, "process_in_blocks": "94968", "process_kernel_time": 0.875469, "process_mem_max_rss": "373620", "process_out_blocks": "2096", "process_user_time": 9.417052}
+[0m16:08:08.275319 [debug] [MainThread]: Command `dbt run` succeeded at 16:08:08.275057 after 13.60 seconds
+[0m16:08:08.276258 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7602f517f3b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7602ca9a1250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7602ca9d07a0>]}
+[0m16:08:08.277532 [debug] [MainThread]: Flushing usage events
+[0m16:08:09.095961 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:17:25.392189 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c10ec6ae40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c10f259af0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c10e987920>]}
+
+
+============================== 16:17:25.396889 | b353e3cf-8204-4e78-bfe9-b4bf3761f95a ==============================
+[0m16:17:25.396889 [info ] [MainThread]: Running with dbt=1.10.6
+[0m16:17:25.397828 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/elmansy/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/home/elmansy/Documents/dbt_GCP/sales_analytics/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt test', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m16:17:30.430399 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b353e3cf-8204-4e78-bfe9-b4bf3761f95a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c0e4d22030>]}
+[0m16:17:30.550599 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b353e3cf-8204-4e78-bfe9-b4bf3761f95a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c0e4eb20f0>]}
+[0m16:17:30.551566 [info ] [MainThread]: Registered adapter: bigquery=1.10.1
+[0m16:17:30.824233 [debug] [MainThread]: checksum: f6e4baf4de20596ffb9d14e6ef805989eb0e1950dedc3cc83d03f20aa023904c, vars: {}, profile: , target: , version: 1.10.6
+[0m16:17:31.016351 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m16:17:31.016939 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m16:17:31.029266 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.sales_analytics.example
+[0m16:17:31.083097 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b353e3cf-8204-4e78-bfe9-b4bf3761f95a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c0e496f7d0>]}
+[0m16:17:31.208260 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m16:17:31.210732 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m16:17:31.452190 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b353e3cf-8204-4e78-bfe9-b4bf3761f95a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c0e4a60590>]}
+[0m16:17:31.452953 [info ] [MainThread]: Found 2 models, 2 data tests, 497 macros
+[0m16:17:31.453575 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b353e3cf-8204-4e78-bfe9-b4bf3761f95a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c0e4a63470>]}
+[0m16:17:31.456627 [info ] [MainThread]: 
+[0m16:17:31.457822 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:17:31.458616 [info ] [MainThread]: 
+[0m16:17:31.459706 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m16:17:31.469280 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_sales-analytics-453721_sales_dataset'
+[0m16:17:31.470390 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:17:34.654760 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b353e3cf-8204-4e78-bfe9-b4bf3761f95a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c0e46c9a00>]}
+[0m16:17:34.655610 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:17:34.660206 [debug] [Thread-1 (]: Began running node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m16:17:34.661069 [debug] [Thread-2 (]: Began running node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m16:17:34.661731 [info ] [Thread-1 (]: 1 of 2 START test not_null_sales_final_country ................................. [RUN]
+[0m16:17:34.662581 [info ] [Thread-2 (]: 2 of 2 START test not_null_sales_final_total_orders ............................ [RUN]
+[0m16:17:34.663442 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_sales-analytics-453721_sales_dataset, now test.sales_analytics.not_null_sales_final_country.299e935e0e)
+[0m16:17:34.664277 [debug] [Thread-2 (]: Acquiring new bigquery connection 'test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab'
+[0m16:17:34.665271 [debug] [Thread-1 (]: Began compiling node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m16:17:34.666217 [debug] [Thread-2 (]: Began compiling node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m16:17:34.723267 [debug] [Thread-2 (]: Writing injected SQL for node "test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab"
+[0m16:17:34.725749 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_analytics.not_null_sales_final_country.299e935e0e"
+[0m16:17:34.726841 [debug] [Thread-1 (]: Began executing node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m16:17:34.727604 [debug] [Thread-2 (]: Began executing node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m16:17:34.787389 [debug] [Thread-2 (]: Writing runtime sql for node "test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab"
+[0m16:17:34.784625 [debug] [Thread-1 (]: Writing runtime sql for node "test.sales_analytics.not_null_sales_final_country.299e935e0e"
+[0m16:17:34.788887 [debug] [Thread-2 (]: On test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sales_analytics", "target_name": "dev", "node_id": "test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select total_orders
+from `sales-analytics-453721`.`sales_dataset`.`sales_final`
+where total_orders is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m16:17:34.789574 [debug] [Thread-1 (]: On test.sales_analytics.not_null_sales_final_country.299e935e0e: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sales_analytics", "target_name": "dev", "node_id": "test.sales_analytics.not_null_sales_final_country.299e935e0e"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select country
+from `sales-analytics-453721`.`sales_dataset`.`sales_final`
+where country is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m16:17:34.790300 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m16:17:34.791168 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:17:35.985135 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=sales-analytics-453721&j=bq:US:41da1b84-479e-4ea4-bdfd-e5f0f2cea405&page=queryresults
+[0m16:17:36.716202 [debug] [Thread-2 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=sales-analytics-453721&j=bq:US:b05826dc-c027-4a8b-911f-049b3bde1d2b&page=queryresults
+[0m16:17:37.016010 [info ] [Thread-1 (]: 1 of 2 PASS not_null_sales_final_country ....................................... [[32mPASS[0m in 2.35s]
+[0m16:17:37.017117 [debug] [Thread-1 (]: Finished running node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m16:17:37.931491 [info ] [Thread-2 (]: 2 of 2 PASS not_null_sales_final_total_orders .................................. [[32mPASS[0m in 3.27s]
+[0m16:17:37.932630 [debug] [Thread-2 (]: Finished running node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m16:17:37.935090 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m16:17:37.936662 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:17:37.937528 [debug] [MainThread]: Connection 'test.sales_analytics.not_null_sales_final_country.299e935e0e' was properly closed.
+[0m16:17:37.938319 [debug] [MainThread]: Connection 'test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab' was properly closed.
+[0m16:17:37.939105 [info ] [MainThread]: 
+[0m16:17:37.939884 [info ] [MainThread]: Finished running 2 data tests in 0 hours 0 minutes and 6.48 seconds (6.48s).
+[0m16:17:37.941367 [debug] [MainThread]: Command end result
+[0m16:17:37.983205 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m16:17:37.986811 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m16:17:38.000552 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/run_results.json
+[0m16:17:38.001201 [info ] [MainThread]: 
+[0m16:17:38.001925 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m16:17:38.002686 [info ] [MainThread]: 
+[0m16:17:38.003308 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m16:17:38.005364 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 12.71702, "process_in_blocks": "6200", "process_kernel_time": 0.692701, "process_mem_max_rss": "376368", "process_out_blocks": "2072", "process_user_time": 8.913153}
+[0m16:17:38.006270 [debug] [MainThread]: Command `dbt test` succeeded at 16:17:38.006010 after 12.72 seconds
+[0m16:17:38.007112 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c10f1d3470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c10e0c68a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74c10e0a7770>]}
+[0m16:17:38.008144 [debug] [MainThread]: Flushing usage events
+[0m16:17:38.953304 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:18:05.937676 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f42c225b980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f42c2165e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f42c28c9b20>]}
+
+
+============================== 16:18:05.944118 | 7de7f4ea-5a31-44f1-b978-465b6b7e57b2 ==============================
+[0m16:18:05.944118 [info ] [MainThread]: Running with dbt=1.10.6
+[0m16:18:05.945386 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/elmansy/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/home/elmansy/Documents/dbt_GCP/sales_analytics/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt docs generate', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:18:10.663562 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7de7f4ea-5a31-44f1-b978-465b6b7e57b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4298149e20>]}
+[0m16:18:10.788780 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7de7f4ea-5a31-44f1-b978-465b6b7e57b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f429b2e4980>]}
+[0m16:18:10.789946 [info ] [MainThread]: Registered adapter: bigquery=1.10.1
+[0m16:18:11.068127 [debug] [MainThread]: checksum: f6e4baf4de20596ffb9d14e6ef805989eb0e1950dedc3cc83d03f20aa023904c, vars: {}, profile: , target: , version: 1.10.6
+[0m16:18:11.246974 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m16:18:11.247532 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m16:18:11.259461 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.sales_analytics.example
+[0m16:18:11.336846 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7de7f4ea-5a31-44f1-b978-465b6b7e57b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4297d2cd10>]}
+[0m16:18:11.366287 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7de7f4ea-5a31-44f1-b978-465b6b7e57b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4297d2d880>]}
+[0m16:18:11.367359 [info ] [MainThread]: Found 2 models, 2 data tests, 497 macros
+[0m16:18:11.368313 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7de7f4ea-5a31-44f1-b978-465b6b7e57b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4297f934d0>]}
+[0m16:18:11.371574 [info ] [MainThread]: 
+[0m16:18:11.372215 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m16:18:11.372784 [info ] [MainThread]: 
+[0m16:18:11.373841 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m16:18:11.380835 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_sales-analytics-453721_sales_dataset'
+[0m16:18:11.381734 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:18:13.465735 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7de7f4ea-5a31-44f1-b978-465b6b7e57b2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f42981d14c0>]}
+[0m16:18:13.467103 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:18:13.472096 [debug] [Thread-1 (]: Began running node model.sales_analytics.stg_sales
+[0m16:18:13.473800 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_sales-analytics-453721_sales_dataset, now model.sales_analytics.stg_sales)
+[0m16:18:13.475314 [debug] [Thread-1 (]: Began compiling node model.sales_analytics.stg_sales
+[0m16:18:13.501326 [debug] [Thread-1 (]: Writing injected SQL for node "model.sales_analytics.stg_sales"
+[0m16:18:13.503141 [debug] [Thread-1 (]: Began executing node model.sales_analytics.stg_sales
+[0m16:18:13.504466 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:18:13.507465 [debug] [Thread-1 (]: Finished running node model.sales_analytics.stg_sales
+[0m16:18:13.509615 [debug] [Thread-3 (]: Began running node model.sales_analytics.sales_final
+[0m16:18:13.510502 [debug] [Thread-3 (]: Acquiring new bigquery connection 'model.sales_analytics.sales_final'
+[0m16:18:13.511492 [debug] [Thread-3 (]: Began compiling node model.sales_analytics.sales_final
+[0m16:18:13.518918 [debug] [Thread-3 (]: Writing injected SQL for node "model.sales_analytics.sales_final"
+[0m16:18:13.520446 [debug] [Thread-3 (]: Began executing node model.sales_analytics.sales_final
+[0m16:18:13.521821 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m16:18:13.523903 [debug] [Thread-3 (]: Finished running node model.sales_analytics.sales_final
+[0m16:18:13.525629 [debug] [Thread-2 (]: Began running node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m16:18:13.527523 [debug] [Thread-2 (]: Acquiring new bigquery connection 'test.sales_analytics.not_null_sales_final_country.299e935e0e'
+[0m16:18:13.528731 [debug] [Thread-1 (]: Began running node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m16:18:13.530038 [debug] [Thread-2 (]: Began compiling node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m16:18:13.531664 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.sales_analytics.stg_sales, now test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab)
+[0m16:18:13.543970 [debug] [Thread-1 (]: Began compiling node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m16:18:13.597187 [debug] [Thread-1 (]: Writing injected SQL for node "test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab"
+[0m16:18:13.605895 [debug] [Thread-1 (]: Began executing node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m16:18:13.603289 [debug] [Thread-2 (]: Writing injected SQL for node "test.sales_analytics.not_null_sales_final_country.299e935e0e"
+[0m16:18:13.607551 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m16:18:13.610799 [debug] [Thread-1 (]: Finished running node test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab
+[0m16:18:13.612472 [debug] [Thread-2 (]: Began executing node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m16:18:13.614039 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m16:18:13.616913 [debug] [Thread-2 (]: Finished running node test.sales_analytics.not_null_sales_final_country.299e935e0e
+[0m16:18:13.620956 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m16:18:13.622058 [debug] [MainThread]: Connection 'test.sales_analytics.not_null_sales_final_total_orders.6cd04af2ab' was properly closed.
+[0m16:18:13.623001 [debug] [MainThread]: Connection 'model.sales_analytics.sales_final' was properly closed.
+[0m16:18:13.624554 [debug] [MainThread]: Connection 'test.sales_analytics.not_null_sales_final_country.299e935e0e' was properly closed.
+[0m16:18:13.628040 [debug] [MainThread]: Command end result
+[0m16:18:14.153027 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m16:18:14.156279 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m16:18:14.173413 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/run_results.json
+[0m16:18:14.178726 [debug] [MainThread]: Acquiring new bigquery connection 'generate_catalog'
+[0m16:18:14.179614 [info ] [MainThread]: Building catalog
+[0m16:18:14.192618 [debug] [ThreadPool]: Acquiring new bigquery connection 'sales-analytics-453721.information_schema'
+[0m16:18:14.260260 [debug] [ThreadPool]: On sales-analytics-453721.information_schema: /* {"app": "dbt", "dbt_version": "1.10.6", "profile_name": "sales_analytics", "target_name": "dev", "connection_name": "sales-analytics-453721.information_schema"} */
+
+    with
+                table_shards_stage as (
+    select
+        tables.project_id as table_catalog,
+        tables.dataset_id as table_schema,
+        coalesce(REGEXP_EXTRACT(tables.table_id, '^(.+)[0-9]{8}$'), tables.table_id) as table_name,
+        tables.table_id as shard_name,
+        REGEXP_EXTRACT(tables.table_id, '^.+([0-9]{8})$') as shard_index,
+        REGEXP_CONTAINS(tables.table_id, '^.+[0-9]{8}$') and tables.type = 1 as is_date_shard,
+        case
+            when materialized_views.table_name is not null then 'materialized view'
+            when tables.type = 1 then 'table'
+            when tables.type = 2 then 'view'
+            else 'external'
+        end as table_type,
+        tables.type = 1 as is_table,
+        JSON_VALUE(table_description.option_value) as table_comment,
+        tables.size_bytes,
+        tables.row_count
+    from `sales-analytics-453721`.`sales_dataset`.__TABLES__ tables
+    left join `sales-analytics-453721`.`sales_dataset`.INFORMATION_SCHEMA.MATERIALIZED_VIEWS materialized_views
+        on materialized_views.table_catalog = tables.project_id
+        and materialized_views.table_schema = tables.dataset_id
+        and materialized_views.table_name = tables.table_id
+    left join `sales-analytics-453721`.`sales_dataset`.INFORMATION_SCHEMA.TABLE_OPTIONS table_description
+        on table_description.table_catalog = tables.project_id
+        and table_description.table_schema = tables.dataset_id
+        and table_description.table_name = tables.table_id
+        and table_description.option_name = 'description'
+),
+                table_shards as (
+                    select * from table_shards_stage
+                    where ((
+                                upper(table_schema) = upper('sales_dataset')
+                            and upper(table_name) = upper('sales_final')
+                            ) or (
+                                upper(table_schema) = upper('sales_dataset')
+                            and upper(table_name) = upper('stg_sales')
+                            ))
+                ),
+                tables as (
+    select distinct
+        table_catalog,
+        table_schema,
+        table_name,
+        is_date_shard,
+        table_type,
+        is_table,
+        table_comment
+    from table_shards
+),
+                table_stats as (
+    select
+        table_catalog,
+        table_schema,
+        table_name,
+        max(shard_name) as latest_shard_name,
+        min(shard_index) as shard_min,
+        max(shard_index) as shard_max,
+        count(shard_index) as shard_count,
+        sum(size_bytes) as size_bytes,
+        sum(row_count) as row_count
+    from table_shards
+    group by 1, 2, 3
+),
+
+                columns as (
+    select
+        columns.table_catalog,
+        columns.table_schema,
+        columns.table_name as shard_name,
+        coalesce(paths.field_path, '<unknown>') as column_name,
+        -- invent a row number to account for nested fields
+        -- BQ does not treat these nested properties as independent fields
+        row_number() over (
+            partition by
+                columns.table_catalog,
+                columns.table_schema,
+                columns.table_name
+            order by
+                columns.ordinal_position,
+                paths.field_path
+        ) as column_index,
+        coalesce(paths.data_type, '<unknown>') as column_type,
+        paths.description as column_comment,
+        case when columns.is_partitioning_column = 'YES' then 1 else 0 end as is_partitioning_column,
+        case when columns.is_partitioning_column = 'YES' then paths.field_path end as partition_column,
+        case when columns.clustering_ordinal_position is not null then 1 else 0 end as is_clustering_column,
+        case when columns.clustering_ordinal_position is not null then paths.field_path end as cluster_column,
+        columns.clustering_ordinal_position
+    from `sales-analytics-453721`.`sales_dataset`.INFORMATION_SCHEMA.COLUMNS columns
+    join `sales-analytics-453721`.`sales_dataset`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS paths
+        on paths.table_catalog = columns.table_catalog
+        and paths.table_schema = columns.table_schema
+        and paths.table_name = columns.table_name
+        and paths.column_name = columns.column_name
+    where columns.ordinal_position is not null
+),
+                column_stats as (
+    select
+        table_catalog,
+        table_schema,
+        shard_name,
+        max(is_partitioning_column) = 1 as is_partitioned,
+        max(partition_column) as partition_column,
+        max(is_clustering_column) = 1 as is_clustered,
+        array_to_string(
+            array_agg(
+                cluster_column ignore nulls
+                order by clustering_ordinal_position
+            ), ', '
+        ) as clustering_columns
+    from columns
+    group by 1, 2, 3
+)
+
+            
+    select
+        tables.table_catalog as table_database,
+        tables.table_schema,
+        case
+            when tables.is_date_shard then concat(tables.table_name, '*')
+            else tables.table_name
+        end as table_name,
+        tables.table_type,
+        tables.table_comment,
+        -- coalesce column metadata fields to ensure they are non-null for catalog generation
+        -- external table columns are not present in COLUMN_FIELD_PATHS
+        coalesce(columns.column_name, '<unknown>') as column_name,
+        coalesce(columns.column_index, 1) as column_index,
+        coalesce(columns.column_type, '<unknown>') as column_type,
+        coalesce(columns.column_comment, '') as column_comment,
+
+        'Shard count' as `stats__date_shards__label`,
+        table_stats.shard_count as `stats__date_shards__value`,
+        'The number of date shards in this table' as `stats__date_shards__description`,
+        tables.is_date_shard as `stats__date_shards__include`,
+
+        'Shard (min)' as `stats__date_shard_min__label`,
+        table_stats.shard_min as `stats__date_shard_min__value`,
+        'The first date shard in this table' as `stats__date_shard_min__description`,
+        tables.is_date_shard as `stats__date_shard_min__include`,
+
+        'Shard (max)' as `stats__date_shard_max__label`,
+        table_stats.shard_max as `stats__date_shard_max__value`,
+        'The last date shard in this table' as `stats__date_shard_max__description`,
+        tables.is_date_shard as `stats__date_shard_max__include`,
+
+        '# Rows' as `stats__num_rows__label`,
+        table_stats.row_count as `stats__num_rows__value`,
+        'Approximate count of rows in this table' as `stats__num_rows__description`,
+        tables.is_table as `stats__num_rows__include`,
+
+        'Approximate Size' as `stats__num_bytes__label`,
+        table_stats.size_bytes as `stats__num_bytes__value`,
+        'Approximate size of table as reported by BigQuery' as `stats__num_bytes__description`,
+        tables.is_table as `stats__num_bytes__include`,
+
+        'Partitioned By' as `stats__partitioning_type__label`,
+        column_stats.partition_column as `stats__partitioning_type__value`,
+        'The partitioning column for this table' as `stats__partitioning_type__description`,
+        column_stats.is_partitioned as `stats__partitioning_type__include`,
+
+        'Clustered By' as `stats__clustering_fields__label`,
+        column_stats.clustering_columns as `stats__clustering_fields__value`,
+        'The clustering columns for this table' as `stats__clustering_fields__description`,
+        column_stats.is_clustered as `stats__clustering_fields__include`
+
+    from tables
+    join table_stats
+        on table_stats.table_catalog = tables.table_catalog
+        and table_stats.table_schema = tables.table_schema
+        and table_stats.table_name = tables.table_name
+    left join column_stats
+        on column_stats.table_catalog = tables.table_catalog
+        and column_stats.table_schema = tables.table_schema
+        and column_stats.shard_name = table_stats.latest_shard_name
+    left join columns
+        on columns.table_catalog = tables.table_catalog
+        and columns.table_schema = tables.table_schema
+        and columns.shard_name = table_stats.latest_shard_name
+
+  
+[0m16:18:14.261695 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m16:18:14.999356 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=sales-analytics-453721&j=bq:US:a9f19616-6ec6-4c8d-833d-c9dfa27e28d5&page=queryresults
+[0m16:18:17.579813 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m16:18:17.607932 [debug] [MainThread]: Wrote artifact CatalogArtifact to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/catalog.json
+[0m16:18:17.661093 [debug] [MainThread]: Wrote artifact WritableManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/manifest.json
+[0m16:18:17.664588 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/semantic_manifest.json
+[0m16:18:17.666099 [info ] [MainThread]: Catalog written to /home/elmansy/Documents/dbt_GCP/sales_analytics/target/catalog.json
+[0m16:18:17.668906 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 11.904035, "process_in_blocks": "3424", "process_kernel_time": 0.660773, "process_mem_max_rss": "372936", "process_out_blocks": "5464", "process_user_time": 8.940939}
+[0m16:18:17.669690 [debug] [MainThread]: Command `dbt docs generate` succeeded at 16:18:17.669530 after 11.91 seconds
+[0m16:18:17.670219 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m16:18:17.670941 [debug] [MainThread]: Connection 'sales-analytics-453721.information_schema' was properly closed.
+[0m16:18:17.672143 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f42c26f4590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4297f4cf80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f42c16ddac0>]}
+[0m16:18:17.673167 [debug] [MainThread]: Flushing usage events
+[0m16:18:18.480717 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:18:55.286604 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x744ae1601880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x744ae166b8c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x744ae0bd5d30>]}
+
+
+============================== 16:18:55.291253 | 14dc1191-fbb2-4339-92e1-3af2e06fc471 ==============================
+[0m16:18:55.291253 [info ] [MainThread]: Running with dbt=1.10.6
+[0m16:18:55.292077 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/home/elmansy/Documents/dbt_GCP/sales_analytics/logs', 'profiles_dir': '/home/elmansy/.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt docs serve --port 8099', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:18:59.208409 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '14dc1191-fbb2-4339-92e1-3af2e06fc471', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x744ae2a4a6c0>]}
+[0m16:18:59.320342 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '14dc1191-fbb2-4339-92e1-3af2e06fc471', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x744ab746f8f0>]}

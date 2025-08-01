@@ -1,0 +1,1 @@
+{{ test_not_null(model=get_where_subquery(ref('sales_final'))) }}
